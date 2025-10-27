@@ -23,8 +23,12 @@ pipeline {
         }
 
         stage('Start') {
+            
             when {
-                branch 'main'
+                anyOf {
+                    branch 'main'
+                    expression { env.GIT_BRANCH == 'origin/main' }
+                }
             }
             steps {
                 sh 'npm start'
