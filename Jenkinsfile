@@ -1,7 +1,7 @@
 pipeline {
     agent any
-    tools {
-        nodejs 'node24'
+    environment {
+        PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
     }
     stages {
         stage('Checkout') {
