@@ -43,10 +43,12 @@ pipeline {
             
             // ✅ 실행 조건 설정
             when {
-                anyOf {
+                anyOf {                    
                     // 현재 브랜치가 "main"이거나
                     branch 'main'
+                    
                     // Git 브랜치 이름이 "origin/main"일 때만 stage 실행
+                    // Jenkins internally calls scm.branches and populates env.BRANCH_NAME automatically.
                     expression { env.GIT_BRANCH == 'origin/main' }
                 }
             }
