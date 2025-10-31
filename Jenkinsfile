@@ -26,7 +26,7 @@ pipeline {
         stage('Install') {
             steps {
                 // package.json에 정의된 모든 npm 패키지 설치
-                sh 'npm installs'
+                sh 'npm install'
             }
         }
 
